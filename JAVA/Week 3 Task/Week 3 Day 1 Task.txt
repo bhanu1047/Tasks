@@ -1,0 +1,20 @@
+Q1) what is generic collection?
+
+	Generic:-
+	----------
+
+		This topic is introduced in java 1.5 version.We use this Generic to provide type-saftey and to resolve type-casting problems.
+
+Q2) how programmer can ensure that collection object must accept     the values of specific data type?
+		ArrayList an accept any type of data by using add method but we we need to access one specific type of data we need to menstion that data type with in"<datatype>" after arratlist  while creating object to the arraylist.
+		
+
+Q3) write a program to reverse the data added to ArrayList.
+
+	
+
+Q4) WAP to find second largest value in given ArrayList.
+
+Q5) WAP to retrieve the elements of Array using Iterator.
+
+Q6) WAP to Accept strings nd find the substrings.

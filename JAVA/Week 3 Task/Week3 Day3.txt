@@ -1,0 +1,108 @@
+ 1. Input a text from the user and reverse it.(Do not reverse())?
+
+	import java.util.Scanner;
+	class  Reverse
+	{
+		public static void main(String[] args) 
+		{
+			Scanner s = new Scanner(System.in);
+			String text="",rev="";	
+			System.out.println("Enter Some text");
+			text = s.nextLine();
+			int len = 0;
+			len = text.length();
+	
+			//Reverse logic
+			for(int i = len-1;i>=0;i--)
+			{
+				rev = rev+text.charAt(i);
+				//System.out.println(rev);
+			}
+			System.out.println(rev);
+		}
+	}
+
+	Output:-
+	--------
+		Enter some text : Guruprasad
+
+		Revese String : dasarpuruG
+=========================================================================================================================================
+
+ 2. Copy the contents of one file to another.
+
+	filename -- target.txt
+
+Reading ---->InputStream
+Writing----->outputStream
+
+---> let the user tell which file he want to copy.
+
+--->Open the source file for reading and targetfile is for doing
+
+--> Source.txt will use FileInputStream.
+---> targent.txt will use FileOutputStream.
+---> Byte array (or) Charector array
+--->arg[0]--->Source file
+--->arg[1]--->Target file
+
+Two overloaded method of write can be used 
+		fos.write(b)
+		fos.write(b,o,)
+--->Use the read and write methods
+
+
+
+
+import java.io.*;
+class PerformCopyFile 
+{
+	public static void main(String[] args) 
+	{
+		byte[] b = new byte[100];
+		int read =0;
+		int size = b.length;
+		int Count = 0;
+		try(FileInputStream fis = new FileInputStream(args[0]);FileOutputStream fos = new FileOutputStream(args[1]);)//Try with resource type
+		{
+			while((read = fis.read(b))!=-1)
+			{
+				
+				if(read<size)
+				{
+				fos.write(b,0,read);
+				}
+				else
+				{
+					fos.write(b);
+				}
+				count = count+read;
+				System.out.println("Count = "+count);
+			}
+		}
+		catch(IOException ex)
+		{
+		}
+	}
+}
+
+
+
+==========================================================================================================================
+
+Accept the person details.Create a person object out of these details.Store this objects in the fie.Also read the object from the file.
+
+
+What is Serialization?
+	
+
+	this is the process in which the object are return to the file.
+	Ojects are converted to string (or) equal converted type then stored in some media.this is called as Serialization. And the eactlly reverse 	process is called DeSerialization.
+
+Steps to do the program:
+
+1.Input details from file
+
+2.Create
+
+3.Store

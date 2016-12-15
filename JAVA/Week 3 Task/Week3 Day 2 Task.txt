@@ -1,0 +1,230 @@
+Q1 what is the use of iterator while using java colections ?
+
+	Iterator is an interface and is implemented by collections classes.The iterator provides a meaning of "Looping" over encapsulation objects.
+
+
+Q2.What is the Defference between Iterator and List Iterator ?
+
+		
+
+			Iterator								ListIterator
+			--------								------------
+
+	i)  .Iterator is used for traversing Map,List and Set both.		i)  . ListIterator to traverse Listobject only.
+
+
+	ii) .Iterator can be used to  iterate the list,map and 			ii) . ListIterator allows the programmers to iterate the
+	     set object in one direction i.e forward.				      list objects in both directions i.e forward as well as 											              backward direction using previous() and next() method.
+
+	iii). Iterator can not add the element during traversal 		iii). ListIterator can modify the list  during iteration using
+		but it can remove the element.					       add(E e) , remove() or set(E e) methods.
+
+	iv) . Iterator's current position during traversal can not		iv) .  ListIterator can obtain the iterator's current position
+	        be determined using Iterator.						 in the list.
+
+	v)  . We can not obtain the index using Iterator as 			v)  .ListIterator can obtain the index of the elements using 				there is no such methods present.					previousIndex(E e) or nextIndex(E e) methods.
+		
+
+
+
+
+Q3.What is the functional difference between the collections mentioned bellow
+
+	ArrayList vs LinkedList vs vector:-
+	-----------------------------------
+
+	* The above three are used to implement "ListInterface".They are very similar to use but the difference is implementation.
+
+	ArrayList:-
+	-----------
+		* ArrayList is implemented as a resizable array and it's size is increased dynamically.
+
+		* ArrayList elements can be accessed by using get and set methods.
+		
+		* Default insial capasity of array list is small.
+
+	LinkedList :
+	------------
+		* LinkedList is implemented as a double linkdlist and it's performance on add and remove is better then ArrayList and worse on set 		  		and get methods.
+
+	Vector :-
+	---------
+
+		* Vector is similar with Arraylist but it is synchronized.
+
+		* It is better choice if your program is tread-safe.
+
+		* vector and arraylist requires space as more elements are added.
+
+		* vectors eachtime doubles it's arraysize.
+			
+
+	Hashset vs Treeset vs Linked HashSet :-
+	---------------------------------------
+	
+	HashSet :-
+	----------
+
+		* HashSet uses HashMap internally to store it’s elements.
+		* HashSet doesn’t maintain any order of elements.
+		* HashSet gives better performance than the LinkedHashSet and TreeSet.
+		* HashSet allows maximum one null element.
+		* HashSet requires less memory than LinkedHashSet and TreeSet.
+		* Use HashSet if you don’t want to maintain any order of elements.
+
+	LinkedHashSet :-
+	----------------
+		
+		* LinkedHashSet uses  LinkedHashMap internally to store it’s elements.
+		* LinkedHashSet maintains insertion order of elements. i.e elements are placed as they are inserted.
+		* The performance of LinkedHashSet is between HashSet and TreeSet. It’s performance is almost similar to HashSet.
+		* LinkedHashSet allows maximum one null element.
+		* LinkedHashSet requires more memory than HashSet.
+		* Use LinkedHashSet if you want to maintain insertion order of elements.
+
+
+	TreeSet :-
+	----------
+
+		* TreeSet uses TreeMap internally to store it’s elements.  
+		* TreeSet orders the elements according to supplied Comparator.
+		* TreeSet gives less performance than the HashSet and LinkedHashSet because of sort the elements after each insertion and removal 				operations.
+		* TreeSet doesn’t allow even a single null element.
+ 		* TreeSet requires more memory than HashSet.
+		* Use TreeSet if you want to sort the elements according to some Comparator.
+
+
+Q4 Write a program to swap two elements in an array list?
+
+	import java.util.*;
+	class SwapTwoElementsinArrayList 
+	{
+		public static void main(String[] args) 
+		{
+			ArrayList a = new ArrayList();
+			a.add("Guruprasad");
+			a.add("Arun");
+			a.add("Lavanya");
+			a.add("Renuka");
+			a.add("Prudvi");
+			a.add("Aniketh");	
+			a.add("Bhanu");
+			System.out.println("Before Swaping\n");
+			for(Object b : a)
+			{
+				System.out.println(b);
+			}
+			System.out.println("\n\nAfter Swaping \n");
+			Collections.swap(a,0,5);
+			for(Object b : a)
+			{
+				System.out.println(b);
+			}
+		}
+	}
+
+
+
+	Output :-
+	---------
+		Before Swaping :-
+				Guruprasda
+				Arun
+				Lavanya
+				Renuka
+				Prudvi
+				Aniketh
+				Bhanu
+
+		After Swaping :-
+				Bhanu
+				Aniketh
+				Prudvi
+				Renuka
+				Lavanya
+				Arun
+				Guruprasad
+
+
+Q5 Write a Program to convert HashSet into Treeset?
+
+	import java.util.*;
+	//import java.util.HashSet;
+	//import javautil.Set;
+	//import java.util.TreeSet;
+	class ConvertHashSetToTreeSet  
+	{
+		public static void main(String[] args) 
+		{
+			LinkedList a = new LinkedList();
+			a.add("1");
+			a.add("Guru");
+			a.add("2");
+			a.add("Prasad");
+			a.add("3");
+			a.add("Sunkara");
+			System.out.println("HasSet Elements\n");
+			System.out.println(a);
+			Set b = new TreeSet(a);
+			System.out.println("\nTree Elements\n");
+			for(Object c : b)
+			{
+				System.out.println(c);
+			}
+		}
+	}
+
+
+	Output :-
+	---------
+
+		HashSet Elements :-
+			[1,Guru,2,Prasad,3,Sunkara]
+
+		Tree Elements :-
+			1
+			2
+			3
+			Guru
+			Prasad
+			Sunkara
+			
+
+Q6 Write a pro gram to check whether an element exist in linked list or not?
+
+	import java.util.*;
+	class CheckElementsPresentinLinkedList 
+	{
+		public static void main(String[] args) 
+		{
+			LinkedList a = new LinkedList();
+			a.add("Arun");
+			a.add("Guruprasad");
+			a.add("Lavanya");
+			a.add("Aniketh");
+			a.add("Prudvi");
+			a.add("Bhanu");
+			a.add("Renuka");
+			if(a.contains("Guruprasad"))
+			{
+				System.out.println("Guruprasad is presnt");
+			}
+			else
+			{
+				System.out.println("Guruprasad is not presnt");
+			}
+			a.contains("Prudvi");
+			a.contains("Lavanya");
+			a.contains("Renuka");
+			a.contains("Prasad");
+		}
+	}
+
+
+
+
+
+
+
+
+	

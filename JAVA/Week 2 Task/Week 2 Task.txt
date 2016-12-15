@@ -1,0 +1,866 @@
+
+1.	Program: Find out duplicate number between 1 to N numbers. 
+	Description: You have got a range of numbers between 1 to N, where one of the number is repeated. You need to write a program to find out the 	duplicate number.
+
+
+	import java.util.Scanner;
+	public class DuplicateNumber
+	{
+		public static void main(String[] args)
+		{
+			Scanner s = new Scanner(System.in);
+			System.out.print("Enter how many numbers you want to enter :\t");
+			int a = s.nextInt();
+			int[] b = new int[a];
+			for(int g = 0;g<a;g++)
+			{
+				System.out.println("Enter the "+(g+1)+" number :\t");
+				b[g] = s.nextInt();
+			}
+			int sum = 0;
+			int partialSum = 0;
+			for (int i=0; i<b.length; i++)
+			{
+				sum=sum+i;
+			}
+			for(int j=0; j<b.length-1; j++)
+			{
+				partialSum = partialSum+j;
+			}
+			int duplicateNumber = sum-partialSum;
+			System.out.println("The duplicate number in the numbers: "+duplicateNumber);
+		}
+	}
+
+
+	Output:-
+	--------
+
+		Enter how many numbers you want to enter :	5
+
+				Enter the 1 number :	1
+	
+				Enter the 2 number :	2
+
+				Enter the 3 number :	3
+
+				Enter the 4 number :	4
+
+				Enter the 5 number :	4
+
+		The duplicate number in the numbers:	4			
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.	Program: Write a program to reverse a number. 
+	Description: Write a program to reverse a number using numeric operations. Below example shows how to reverse a number using numeric 	operations.
+
+
+
+
+	import java.util.Scanner;
+	class  Rev
+	{
+		public static void main(String[] args) 
+		{
+			int a;
+			int rev =0;
+			Scanner s = new Scanner(System.in);
+			System.out.print("Enter a Number\t:\t");
+			a = s.nextInt();
+			while(a>0)
+			{
+				rev = (rev*10)+(a%10);
+				a = a/10;
+			}
+			System.out.println("Reverse number\t:\t"+rev);
+		}
+	}
+
+
+	Output:-
+	--------
+
+		Enter a Number :	5432
+
+		Reverse number :	2345
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+3.	Program: Write a program to find perfect number or not. 
+	Description: A perfect number is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its 			positive divisors excluding the number itself. Equivalently, a perfect number is a number that is half the sum of all of its positive 			divisors excluding the number itself. Equivalently, a perfect number is a number that is half the sum of all of its positive divisors. 
+	The first perfect number is 6, because 1, 2 and 3 are its proper positive divisors, and 1 + 2 + 3 = 6. Equivalently, the number 6 is equal to 	half the sum of all its positive divisors:
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+4.	Program: Write a program to implement ArrayList. 
+	Description: Write a program to implement your own ArrayList class. It should contain add(), get(), remove(), size() methods. Use dynamic 		array logic. It should increase its size when it reaches threshold.
+
+
+	import java.util.ArrayList;
+	class ArraylistImplementation 
+	{
+		public static void main(String[] args) 
+		{
+			ArrayList al = new ArrayList();
+			System.out.println("Inisial Size :"+al.size()+"\n");
+			System.out.println("Is empty : "+al.isEmpty()+"\n");
+			al.add(1);
+			al.add("THIS");
+			al.add("IS");
+			al.add("MY");
+			al.add("NEW");
+			al.add("Task");
+			System.out.println(al);
+			System.out.println("Size :"+al.size()+"\n");
+			al.add(1,"String :");
+			System.out.println(al);
+			System.out.println("Size :"+al.size()+"\n");
+			al.remove("String :");
+			System.out.println(al);
+			System.out.println("Size :"+al.size()+"\n");
+			al.remove(2);
+			System.out.println(al);
+			System.out.println("Size :"+al.size()+"\n");
+			System.out.println("Is empty : "+al.isEmpty());
+			System.out.println("contains(\"I\"):"+al.contains("THIS"));
+			System.out.println("contains(\"k\"):"+al.contains("IS"));
+			al.clear();
+			System.out.println("Size :"+al.size()+"\n");
+		}
+	}
+
+
+
+	Output:-
+	--------
+
+		Inisial Size :	0
+
+		Is empty :	ture
+
+		[1,THIS,IS,MY,NEW,TASK]
+
+		Size	:	6
+
+		[1,String :,THIS,IS,MY,NEW,TASK]
+
+		Size	:	7
+
+		[1,THIS,IS,MY,NEW,TASK]
+
+		Size	:	6
+
+		[1,THIS,MY,NEW,TASK]
+
+		Size	:	5
+
+		Isempty :	false
+
+		Contains("THIS") = true
+
+		Contains("IS") = false
+
+		size 	:	0	
+	
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+5.	Program to find second highest number in an integer array without sorting the elements.
+
+
+	import java.util.Scanner;
+	public class SecondLargeNumbers
+	{
+		public static void main(String a[])
+		{
+			Scanner s = new Scanner(System.in);
+			System.out.print("Enter how many number you want to type :\t");
+			int b = s.nextInt();
+			int[] A = new int[b];
+			int top1 = 1;
+			int top2 = 0;
+			for (int i = 0; i < A.length; i++)
+			{
+				System.out.print("\t\tEnter "+(i+1)+" number \t:\t");
+				A[i] = s.nextInt();
+				if (top1 < A[i])
+				{
+					top2 = top1;
+					top1 = A[i];
+				}
+				else if (top2 < A[i])
+				{
+					top2 = A[i];
+				}
+			}		
+			System.out.println("Second Highest Number In the list is :\t"+top2);
+		}
+	}
+
+
+
+	Output:-
+	--------
+		Enter how many number you want to type :	5
+		
+				Enter 1 number :	1
+
+				Enter 2 number :	2
+
+				Enter 3 number :	3
+
+				Enter 4 number :	4
+
+				Enter 5 number :	5
+
+		Second Highest Number In the list is :		4
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+6. Java Program for Fibonacci series without using recursive function concept.
+
+
+	import java.util.*;
+	class FibonacciSeries 
+	{
+		public static void main(String[] args) 
+		{
+			int a,b;	
+			Scanner s = new Scanner(System.in);
+			System.out.println("How many recursion number you want :\t");
+			a = s.nextInt();
+			System.out.println("from which number you want to start recursion :\t");
+			b = s.nextInt();
+			System.out.println("\n");
+			int a1=0,a2=b,a3=0;
+			System.out.println(0);
+			for(int i= 1;i<=a+1;i++)
+			{
+				a1 = a2; 
+				a2 = a3;
+				a3 = a1+a2;
+				System.out.println("Fibonacci Series :"+a3);	
+			}
+		}
+	}
+
+
+	Output :-
+	---------
+
+		How many recursion number you want : 5
+
+		from which number you want to start recursion :8
+
+				Fibonacci Series :0,8,8,16,24,40,64
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+									
+7.	Program: Write a program to find sum of each digit in the given number using recursion. 
+	Description: Below example shows how to find out sum of each digit in the given number using recursion logic. For example, if the number is 		259, then the sum should be 2+5+9 = 16
+
+
+	import java.util.Scanner;
+	public class SumofEachdigit
+	{
+	    public static void main(String args[])
+	    {
+        	Scanner s = new Scanner(System.in);
+        	System.out.println("Enter the number :\t");
+        	int n=s.nextInt();
+        	int sum=0;
+		if (n > 9)
+		{
+			int a = 0;
+			sum = n;
+			while(sum!=0)
+			{
+				a = a+(sum%10);
+				sum = sum/10;
+			}
+			System.out.println("Sum of "+n+" is :\t"+a);
+		}
+		else
+		{
+			System.out.println("Sum of "+n+ "is "+n);
+		}
+	   }
+	}
+
+		
+
+	Output:-
+	--------
+
+		Enter the number :	1234567
+
+		Sum of 1234567 is :	28
+
+--------------------------------------------------------------------------------------------------------------------------------------------------			
+8. 	Program: Write a program to find the sum of the first 1000 prime numbers. 
+	Description: Write a program to find the sum of the first 1000 prime numbers.
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+9.	Program: How to swap two numbers without using temporary variable? 
+	Description: Write a program to swap or exchange two numbers. You should not use any temporary or third variable to swap.
+
+
+	public class SwapingTwoNumbers
+	{
+		public static void main(String[] args) 
+		{
+			System.out.println("Swapping Two Numbers With out Using Temporary Variable");
+			System.out.println("------------------------------------------------------");
+			int a = 96;
+			int b = 69;
+			System.out.println("Before Swapping :\t a: "+a+"\t b:"+b);
+			a = a+b;
+			b = a-b;
+			a = a-b;
+			System.out.println("After Swapping :\t a: "+a+"\t b:"+b);
+		}
+	}
+
+	
+	Output:-
+	--------
+
+		Swapping Two Numbers With out Using Temporary Variable
+		------------------------------------------------------
+		
+			Before Swapping : a : 96	b : 69
+
+			After Swapping  : a : 69	b : 96
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+		
+10.	Write a Program to find top 2 maximum numbers in array. 
+	You should not use any sorting functions. You should iterate the array only once. You should not use any kind of collections in java.
+
+
+	import java.util.Scanner;
+	public class TwoLargeNumbers
+	{
+		public static void main(String a[])
+		{
+			Scanner s = new Scanner(System.in);
+			System.out.print("Enter how many number u want to type :\t");
+			int b = s.nextInt();
+			int[] A = new int[b];
+			int top1 = 1;
+			int top2 = 0;
+			for (int i = 0; i < A.length; i++)
+			{
+				System.out.print("\t\tEnter "+(i+1)+" number \t:\t");
+				A[i] = s.nextInt();
+				if (top1 < A[i])
+				{
+					top2 = top1;
+					top1 = A[i];
+				}
+				else if (top2 < A[i])
+				{
+					top2 = A[i];
+				}
+			}			
+			System.out.println("First Largest Number In the list is :\t"+top1);
+			System.out.println("Secoend Largest Number In the list is :\t"+top2);
+		}
+	}
+
+
+
+
+	Output:-
+	--------
+		Enter how many number you want to type :	5
+		
+				Enter 1 number :	1
+
+				Enter 2 number :	2
+
+				Enter 3 number :	3
+
+				Enter 4 number :	4
+
+				Enter 5 number :	5
+
+		First Largest Number In the list is :   5
+
+		Second Largest Number In the list is :   4		4
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+11.	 Program: Floyd Triangle 1 2 3 4 5 6 7 8 9 10
+
+
+	import java.util.Scanner; 
+	class FloydTriangle
+	{
+	   public static void main(String args[])
+	   {
+	      int n, num = 1, c, d;
+	      Scanner s = new Scanner(System.in);
+	      System.out.println("Enter the number of rows of floyd's triangle you want");
+	      n = s.nextInt();
+	      System.out.println("Floyd's triangle :-");
+	      for ( c = 1 ; c <= n ; c++ )
+	      {
+	         for ( d = 1 ; d <= c ; d++ )
+	         {
+	            System.out.print(num+" ");
+	            num++;
+	         } 
+           	 System.out.println();
+      	      }
+   	   }
+	}
+
+	Output:-
+	--------
+
+		Enter the number of rows of floyd's triangle you want :		5
+
+		1
+		
+		2  3
+
+		4  5  6
+
+		7  8  9  10
+		
+		11 12 13 14 15
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+12	 How to count occurrence of a given character in a String?
+
+
+	import java.util.Scanner; 
+	public class CountCharinString
+	{
+		public static void main(String[] args)
+		{
+			Scanner s = new Scanner(System.in);
+			System.out.println("Please enter a String"); 
+			String a = s.nextLine();
+			System.out.println("Please enter a Character you want to Count :");
+			String b = s.next();
+			int charCount = a.length() - a.replaceAll(b, "").length();
+			System.out.println("Number of occurances of given character:"+charCount);
+		}
+	}
+
+	
+	Output:-
+	--------
+		Please enter a String :	EVERY THING IS POSSIBLE
+
+		Please enter a Character you want to Count :	E
+
+		Number of occurances of given character: 	3
+
+-------------------------------------------------------------------------------------------------------------------------------------------------				
+13.	 Program: Write a program to check whether accepted number is Magic number. 
+	Description: 
+		A Magic number is a number whose sum of digits eventually leads to 1. Example#1: 19 ; 1+9 =10 ; 1+0 = 1. Hence a magic number. 				Example#2: 226; 2+2+6=10; 1+0 =1. Hence a magic number. Example#3: 874; 8+7+4=19; 1+9=10; 1+0=1. Hence a magic number.
+
+
+
+	import java.util.Scanner;
+	public class MagicNumber
+	{
+	    public static void main(String args[])
+	    {
+	        Scanner s = new Scanner(System.in);
+	        System.out.println("Enter the number to be checked.");
+	        int n=s.nextInt();
+	        int sum=0;
+			if (n > 9)
+			{
+				while (n > 9)
+				{
+					int a = 0;
+					sum = n;
+					while(sum!=0)
+					{
+						a = a+(sum%10);
+						sum = sum/10;
+					}
+					n = a;
+				}
+				if(n == 1)
+				{
+					System.out.println("Total is "+n+" so it is a MAGIC NUMBER");
+				}
+				else
+				{
+					System.out.println("Total is "+n+" so it is NOT a MAGIC NUMBER");
+				}
+			}
+			else if(n = 1)
+			{
+				System.out.println("It is a Magic number (but for calculating magic number you needatleast two digit number)");
+			}
+			else
+			{
+				System.out.println("It is not a Magic number (but for calculating magic number you needatleast two digit number)");
+			}
+		}
+	}
+
+
+
+	Output:-
+	--------
+
+			Enter the number to be checked :	234567
+
+			Total is 9 so it is NOT a MAGIC NUMBER.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+		
+
+14.	 Program: Write a program How to check if a number is binary. 
+	Description: 
+		For this question, you need to write a function which will accept an integer and return true if it contains only 0 and 1 e.g. if 		input is 123 then your function will return false, for 101 it should return true.
+
+
+
+	import java.util.Scanner;
+	public class BinaryOrNot
+	{
+		public static boolean Binary(int p)
+		{
+			while(p!=0)
+			{
+				if(p%10>1)
+				{
+					return false;
+				}
+				p=p/10;
+			}
+			return true;
+		}
+		public static void main(String[] args)
+		{
+			System.out.println("Enter the number:");
+			Scanner s = new Scanner(System.in);
+			int a= s.nextInt();
+			if(Binary(a)==true)
+			{
+				System.out.println("The number is Binary");
+			}
+			else
+			{
+				System.out.println("The number is non binary");
+			}	
+		}
+	}
+
+
+
+	Output:-
+	--------
+
+		Enter the number: 	123
+			The number is non binary.
+
+		Enter the number: 	101
+			The number is binary.
+
+------------------------------------------------------------------------------------------------------------------------------------------------		
+15.	 Program: Write a program to generate 10 random numbers using Random class within the range of 1 to 100 using for loop. 
+	Description: 
+		By using Math.random() method also we can generate random number in java
+
+	
+
+	import java.util.*;
+	class RandomNumbers
+	{
+	  public static void main(String[] args)
+		{
+		    Scanner s = new Scanner(System.in);
+			int a,b,c;
+			System.out.print("Enters the Random numbers in between\n");
+			System.out.println("Enter Random numbers Starting From :\t");
+			a = s.nextInt();
+			System.out.print("Enter Random numbers upto :\t");
+			b = s.nextInt();
+			System.out.print("Enter how many Random numbers you want :\t");
+			c = s.nextInt();			
+			Random t = new Random();
+			for (a = 1; a <= c; a++) 
+			{
+				System.out.println(t.nextInt(b));
+			}
+		}
+	}
+
+
+
+	Output:-
+	--------
+
+		Enters the Random numbers in between
+
+		Enter Random numbers Starting From :	100
+
+		Enter Random numbers upto 	   :	1000
+	
+		
+	Enter how many Random numbers you want     :	6
+
+				482
+				256
+				812
+				791
+				584
+				885
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+16.	 Program: Write a program to use super() method. 
+	Description: 
+		Basically super keyword used to refer super class methods and variables.
+
+
+
+	class ParentClass
+	{
+		int age = 45;
+	}
+	class ChildClass extends ParentClass
+	{
+		int age = 21;
+		void display()
+		{
+			System.out.println("Child class age");	
+			System.out.println("Before using super Class :");
+			System.out.println(a);
+			System.out.println("After using super Class :");
+			System.out.println(super.a);
+		}
+	}
+	class SuperClassExp
+	{
+		public static void main(String[] args)
+		{
+			HR obj=new HR();
+			obj.display();
+		}
+	}
+
+
+	Output:-
+	--------
+		Child class age
+
+		Before using super Class : 21
+
+		After using super Class  : 45
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+17.	 Program: Write a program to reverse vowels of a given string. 
+	Description: 
+		Let's string is InstanceOfJava After reversing vowels in a string=anstancOefjavI
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+18.  WAP to implement Bubble sort in java.
+
+	import java.util.Scanner; 
+	class BubbleSort 
+	{
+	  public static void main(String []args)
+		{
+			int a, b, c, swap;
+			Scanner s = new Scanner(System.in);
+		    	System.out.println("Enter how many numbers you want to enter to sort");
+		    	a = s.nextInt();
+		    	int array[] = new int[a];
+		    	for (b = 0; b < a; )
+			{
+				System.out.print("Enter " + (b+1) + " integers : \t");
+				array[b] = s.nextInt();
+				b++;
+			}
+			for (b = 0; b < ( a - 1 ); b++) 
+			{
+			
+				for (c = 0; c < a - b - 1; c++) 
+				{
+					if (array[c] > array[c+1]) /* For descending order use < */
+					{	
+						swap       = array[c];
+						array[c]   = array[c+1];
+						array[c+1] = swap;
+					}
+				}
+			}
+			System.out.println("Sorted list of numbers");
+			for (b = 0; b < a; b++) 
+			System.out.println(array[b]);
+		}
+	}
+
+
+
+	Output:-
+	--------
+
+		Enter how many numbers you want to enter to sort : 6
+			
+				Enter 1 number :	1
+
+				Enter 2 number :	4
+
+				Enter 3 number :	3
+
+				Enter 4 number :	2
+
+				Enter 5 number :	2
+				
+				Enter 6 Number :	5
+
+		
+		
+		Sorted list of numbers :	1,2,2,3,4,5
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+19.  WAP to print the following pattern (example3) 
+	* 
+	* * * 
+	* * * * * 
+	* * * * * * * 
+	* * * * * * * * * 
+
+
+	import java.util.Scanner;
+	class StarPattren 
+	{
+		public static void main(String[] args) 
+		{
+			int a;
+			Scanner s = new Scanner(System.in);
+			System.out.println("Enter How many lines u want :\t");
+			a = s.nextInt();
+			for(int i=1; i<=a; i++)
+			{
+				System.out.print("*");
+				for(int j=1;j<i; j++)
+				{
+					System.out.print("*");
+					System.out.print("*");
+				}
+				System.out.println();
+			}
+		}
+	}
+
+
+
+	Output:-
+	--------
+
+		* 
+		* * * 
+		* * * * * 
+		* * * * * * * 
+		* * * * * * * * * 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+20. WAP to get factorial of a number without using recursion.
+
+
+	import java.util.Scanner;
+	public class Factorial 
+	{
+	   public static void main(String[] args) 
+	   {
+		   int n;
+		   Scanner s = new Scanner(System.in);
+		   System.out.print("Please Enter Which number Factorial you Want : \t");
+	           n = s.nextInt();
+		   int result = 1;
+	           for (int i = 1; i <= n; i++)
+		   {
+			   result = result * i;
+			   //System.out.println(result);/*If any one want the logic how it will work. you can delete the collons*/
+		   }
+       		   System.out.println("The factorial of "+n+" is :" + result);
+  	  }
+	}
+
+
+	Output:-
+	--------
+
+		Please Enter Which number Factorial you Want : 7
+
+		The factorial of 7 is :	5040
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+21.  WAP to take a sentence from user and do unique word count using split().
+
+
+	import java.util.Scanner;
+	public class WordCounting
+	{
+		public static int count,c1=0;
+		public static String arr[];	
+		public static int counting(String ar)
+		{
+			arr= ar.trim().split(" ");	
+			for(String ar1:arr)
+			{
+				if(ar1.length()!=0)
+				{
+					System.out.println(ar1);
+					c1++;
+				}
+			}
+			return c1;
+		}
+		public static void main(String[] args)
+		{
+			String a;
+			Scanner s = new Scanner(System.in);
+			System.out.println("Enter the String");
+			a = s.nextLine();
+			count = WordCounting.counting(a);
+			System.out.println("Total no.of words in your enterd String is: "+count);
+		}
+	}
+
+
+
+	Output :-
+	----------
+		
+		Enter the String : This is my last program in the given task
+
+
+		otal no.of words in your enterd String is:	9
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+

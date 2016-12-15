@@ -1,0 +1,177 @@
+Program for java collections
+-----------------------------
+
+import java.io.*;
+import java.util.Arrays;
+import java.util.List.*;
+
+public class ArrayListCollection
+{
+   public static void main(String[] args) throws IOException
+     {
+	InputStreamReader is=new InputStreamReader(System.in);
+	BufferedReader br=new BufferedReader(is);
+
+	System.out.println("Total no of elements to be added in Array list");
+	int totnum=Interger.parseInt(br.readLin());
+	String data[]=new String[totnum];
+
+	for(int i=0;i<totnum;i++)
+	{
+	   data[i]=br.readLIne();
+	}
+	 List list=Arrays.asList(data);
+	for(Object li : list)
+	{
+	String mydata=(String) li;
+	System.out.println(mydata + "");
+	}
+     }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Q) write a program to accept the data from user and store the data inside ArrayList Object. Display the sum of all the numbers added
+  in Array list.
+
+import java.io.*;
+import java.util.*;
+import java.util.Collections;
+
+public class ArrayListEx
+{
+  public static void main(String[] args) 
+  {
+   try
+   { 
+	int sum=0;
+	InputStreamReader is=new InputStreamReader(System.in);
+	BufferedReader br=new BufferedReader(is);
+	ArrayList mynum=new ArrayList();
+
+	System.out.println("Enter all the elements in ArrayList");
+	for(int i=0;i<5;i++)
+         {
+	   mynum.add(i,Integer.parseInt(br.readLine()));
+	   sum +=(int)mynum.get(i);
+	}
+	 catch(IOException ex)
+	{
+	  System.outprintln(ex);
+	}
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Q) Find Average, Min, Max Total number of elements as well in the ArrayList.(By applying own logic)
+
+import java.io.*;
+import java.util.*;
+import java.util.Collections;
+
+public class ArrayListEx2
+{
+   public static void main(String[] args)
+    {
+	try
+	{ 
+	  int sum=0;
+	  int count=0;
+	  int avg=0;
+	  int min=0;
+   	  int max=0;
+
+	InputStreamReader is=new InputStreamReader(System.in);
+	BufferedReader br=new BufferedReader(is);
+	ArrayList mynum=new ArrayList();
+
+	System.out.println("Enter all the elements in ArrayList");
+	for(int i=0;i<5;i++)
+	{
+	 mynum.add(i,Integer.parseInt(br.readLine()));
+	 sum +=(int)mynum.get(i);
+	 count++;
+	 avg=sum/count;
+	}
+	Object mindata=Collections.min(mynum);
+	Object maxdata=Collections.min(mynum);
+	int sz=mynum.size();
+	System.out.println("Sum is " + sum);
+	System.out.println("Count is " + count);
+	System.out.println("Average is " + avg);
+	System.out.println("Minimum is " +mindata);
+	System.out.println("Maximum is " +maxdata);
+     }
+
+	catch(IOException ex)
+	{
+	 System.outprintln(ex);
+	}
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Q) Performing sort, search shuffle and fill a list using collections.
+
+import java.util.List;
+import java.util.Collections;
+import java.util.io.*;
+import java.util.*;
+
+public class BasicCollectionOpe
+{
+   public static void main(String[] args)
+{
+	List<Float> listdata=new ArrayList<Float>();
+
+	listdata.add(89.6f);
+	listdata.add(43.1f);
+	listdata.add(56.2f);
+	listdata.add(37.4f);
+	listdata.add(24.3f);
+	listdata.add(78.3f);
+
+ 	System.out.println(listdata);
+
+	Collections.sort(listdata);
+	System.out.println(listdata);
+
+	int searchindex=collections.binarySearch(listdata,56.2f);
+
+	if(searchindex>0)
+	 {
+	    System.out.println("Data available in the given list");
+	}
+	   else
+	    {
+	      System.out.println("data not available in the given list");
+	     }
+
+	    Collections.shuffle(listdata);
+	    System.out.println("listdata");
+
+	    Collections.fill(listdata);
+	    System.out.println(listdata);
+}
+}
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+task:
+----
+
+Q1) what is generic collection?
+
+Q2) how programmer can ensure that collection object must accept the values of specific data type?
+
+Q3) write a program to reverse the data added to ArrayList.
+
+Q4) WAP to find second largest value in given ArrayList.
+
+Q5) WAP to retrieve the elements of Array using Iterator.
+
+Q6) WAP to Accept strings nd find the substrings.
+
+------------------------------------------------------------------------------------------------------------------------------------

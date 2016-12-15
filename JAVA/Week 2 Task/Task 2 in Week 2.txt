@@ -1,0 +1,321 @@
+1.	What does the “static” keyword mean ?
+
+		It's simply use to call the methods without creating any object in main method.we can use this keyword with variables,methos,blocks 		and nested class.
+
+
+2.	Can you override private or static method in Java ?
+
+		NO,we can't override private methods because we cann't access privite method from other methods.
+
+		yes,we can override Static methods and it will access from any method.
+
+
+3.	Can you access non static variable in static context ?
+
+		we can access non-static variable in ststic variable by creating an object.With out create any object we cann't access.
+
+
+4.	What are the Data Types supported by Java ?
+
+		Generally java supports two types of data types 
+
+				i) .Primitive Datatype
+				ii).Reference/object Datatype
+
+
+	Primitive datatype:
+	------------------
+
+		In java we have Eight Primitive data types these are predefined.
+		
+		byte:
+		-----
+			It is a 8 bit singed two's complement integer and its size is -(2^7) t0 +(2^7-1).
+
+		short:
+		------
+			It is a 16 bit singed two's complement integer and its size is -(2^15) t0 +(2^15-1).
+
+		int:
+		----
+			It is a 32 bit singed two's complement integer and its size is -(2^31) t0 +(2^31-1).
+			It is used to stored the int values.
+		
+		Long:
+		-----
+			It is a 64 bit singed two's complement integer and its size is -(2^63) t0 +(2^63-1).
+			it is also used to stored the integer value but it sore's larger values then the
+
+		float:
+		------
+			It is a single-precision 32 bit IEEE 754 floating point and its is used to save point values.
+		
+		double:
+		-------
+			
+			It is a single-precision 64 bit IEEE 754 floating point and it is used to default data types in decimal values.
+
+		boolean:
+		--------
+			It represent one bit of information there are two possible values True and False.
+
+		Char:
+		-----
+			It is a single 16-bit unicode and the minimum and maximum value is 14000 and 14fff.It is used to store any charecter.
+
+
+	Reference datatype:
+	-------------------
+		 
+		Reference variable can be created using defined constructor of the classes and they are used to access objects.
+		Default value of any reference variable is null	
+
+
+
+
+5.	What is Autoboxing and Unboxing ?
+
+		Autoboxing:-
+		------------
+
+			Automatically primitive data type is converted in to object data type is called Autoboxing.
+
+		AutoUnboxing:-
+		--------------
+			Automatically object data type is converted in to primitive data type is called Autounboxing.
+
+
+6.	Difference between an Interface and an Abstract class ?
+
+
+		Abstract class								Interface
+
+	i)  .It can have abstract and non-abstract methods.			i)  .Interface can have only abstract methods.
+
+	ii) .Abstract class doesn't support multiple inheritance.		ii) .Interface supports multiple inheritance.
+
+	iii).It can have final,non-final,static and non-static variables.	iii).Interface has only static and final variables.
+
+	iv) .these class can have static methods, main method and constructor.	iv) .Interface can't have static methods, main method or constructor.
+
+	v)  .Abstract class can provide the implementation of interface.	v)  .Interface can't provide the implementation of abstract class.
+
+	vi) .The abstract keyword is used to declare abstract class.		vi) .The interface keyword is used to declare interface.
+
+
+7.	What is the difference between pass by reference and pass by value ?
+
+
+		In passby reference we pass the object reference so if any  change is made it will directly effect the value but 
+		
+		in pass by value we send a copy of value so any change made will not affect the original value.
+
+
+
+8.	What are the basic interfaces of Java Collections Framework ?
+
+
+	interfaces in java collections are
+		1)set:-hash set,tree set,linked set
+		2)list:-Arraylist,Linked list,vector
+		3)map:-sortedmap,hashmap,hashtable,tree map.
+
+
+9.	Why do we use an Iterator while using Java Collections ?
+
+
+	1)iterator:it has 3 methods and moves only in forward direction.
+	
+				i)  .hasNext():to check whether there are elements in javacollection or not
+                      		ii) .next():it is used to print the next element
+                            	iii).remove():it is used to remove elements.
+
+
+
+
+10.	What is the difference betweenHashMap and Hashtable ?
+
+	Performance of hashtable is less when compared to hashmap because hashtable is synchronous and hasmap is unsynchronous.Hashmap accepts
+	nullss values where as hashtable does not accept null values. 
+
+
+
+11.	What is difference between Array and ArrayList ? When will you use Array over ArrayList ?
+
+
+					Array							Arraylist
+					-----							---------
+
+
+	i)  .Array is static in size that is fixed length data structure	i)  .ArrayList is dynamic in size and it is Resizable.
+
+	ii) .Array contain both Array and Primitive type data types		ii) .ArrayList can not contains primitive data types.
+
+	iii).We can use for loop or for each loop to iterate through array 	iii).We can use iterator  to iterate through ArrayList.
+
+	iv) .In performance wise arry is faster then Arraylist.			iv) .In performance wise arrylist is solwer then Array.
+
+	v)  .Array is Multidimentional.						v)  .Array is Single diamentional.
+
+	vi) .In array we insert elements using the assignment operator.		vi) .In Arraylist we insert elements using the add() method.
+
+
+
+12.	When to use parseInt method?
+
+
+	The parseInt method converts the String to an int, and throws a NumberFormatException if the string can’t be converted to an int type.
+
+
+
+13.	What is the difference between StringBuffer and StringBuilder class?
+
+	StringBuffer:
+	-------------
+
+	StringBuffer is mutable means one can change the value of the object . The object created through StringBuffer is stored in the heap.
+
+	StringBuffer is thread safe and its performance is veryslow.
+
+
+	StringBuilder:
+	--------------
+
+		StringBuilder is used stores the object in heap and it can be modified and it'sperformance is fast.
+
+
+
+14.	What is finalize method?
+
+	finalize :
+	----------
+		 It is a method always invoked by garbage collector just before distroying a object to perform cleanup activities.
+
+		 It perform cleanup activity related to object.
+	
+		 What ever the resources assosiated with object will be delocated before distroying an object method by using finalize method.
+
+
+
+15.	What is the difference between final, finally and finalize method?
+
+	final:
+	------
+		* final is a keyword and it is use as modifier applicable for classes methods and variable
+
+		* It is not applicable for inheritance(we can't create child class).
+		
+		* final method is not overridden.
+
+		* final variable is can't change.
+
+	finally :
+	---------
+		* It is a block allways assosiated with try-catch to maintain cleanup code.
+
+		* The specialty of this finanny block is it will be excuted always irrespective of exception is raised (or) not raised and 
+		   handeled (or) not handeled.
+
+	finalize :
+	----------
+		* It is a method always invoked by garbage collector just before distroying a object to perform cleanup activities.
+
+		* It perform cleanup activity related to object.
+	
+		* What ever the resources assosiated with object will be delocated before distroying an object method by using finalize method.
+
+
+16.	What is the difference between throw and throws keyword?
+
+
+	throw:
+	------
+		* The main object of throw keyword is to hand over our created object to the JVM manuvally.
+
+		* Checked exception cann't propagated using throw only.
+
+		* Throw is used with in method.
+
+		* you con't throw multiple exceptions.
+
+		* Best use of throw key word is for user defined exceptions(or)Customized Exception.
+
+	throws :
+	-------
+		* The main object of throws is to delecate responsibility of exceptionhandling to the caller(it may be another method (or) JVM).
+
+		* Here caller method is responsible to the exception.
+
+		* throws key word is require only checked exceptions.
+
+		* You can declare multiple exceptions by using throws
+
+				Ex :- public void method()throws IOException,SQLException. 
+
+
+17.	When and why to use “super” keyword ?
+
+	Super
+	-----
+		Super keyword is used in inheritance if you use super keyword we can't override the parentclass methods.
+
+
+18.	What is “jar” file and how to create and use it?
+
+
+	The JAR file format is based on the popular ZIP file format. Usually these file are used for archiving and distribution the files and 		implementing various libraries, components and plug-ins in java applications it archives dot class files.
+
+	We will create the Jarfile two ways by using Java’s jar command as well as using Eclipse IDE.
+
+	Java’s jar command to create java file :- jar cf JAR_FILE_NAME FILE_NAMES_OR_DIRECTORY_NAME
+		
+			Ex:-jar cf MyApp1.jar C:\JavaProject\MyApp.
+
+	JAR file using Eclipse IDE :-
+	-----------------------------
+
+		Creating JAR file using Eclipse IDE is pretty much easy. Follow the simple steps.Right click on your project, which you want to 		create a JAR file of. And select Export from the context menu.Select JAR file from Java folder and click Next.Provide the Destination 			path and click on Finish to create the JAR.
+
+
+19.	What is the purpose of fileInputStream and fileReader class?
+
+	FileInputStream :-
+	------------------
+
+		Stream is used to binary input/output.FileinputStream is Byte Based.
+
+		FileInputStream and ObjectInputStream can be used forSerialization(object is converted into byte) and DeSerialization(byte tocobject)
+
+		FileInputStream.read() reads 1 byte (8-bit) at a time.
+
+		FileInputStream must be used when we arereading audio, video or other multimedia files.
+
+	FileReader :-
+	-------------
+		Reader is Character Based and it is used character input/output.
+
+		FileReader is not used for Serialization and DeSerialization.
+
+		FileReader.read() reads 2 bytes(16-bit) at a time.
+
+		FileReader must be used when we are reading text files,pdfs or word documents.
+
+
+
+20.	What is the purpose of fileOutputStream and fileWriter class?
+
+
+	FileoutputStream :-
+	-----------------
+		A file output stream is an output stream for writing data to a File or to a FileDescriptor.
+
+		It is used for writing streams of characters.For writing streams of raw bytes, consider using a FileOutputStream. 
+		
+	FileWriter :-
+	-------------
+		Java FileWriter class is used to write character-oriented data to the file.
+		
+		FileOutputStream is meant for writing streams of raw bytes such as image data.For writing streams of characters, consider using 			FileWriter.
+		
+	
+	

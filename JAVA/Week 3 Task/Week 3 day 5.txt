@@ -1,0 +1,32 @@
+
+Date : 24/NOV/2016
+
+
+
+we will be using HashMAp examples today
+
+we have alrdy covered Arraylist, Linked List,HAshSet,TreeSet.
+
+HashMap is the concept which helps us to manage the data like dictionary where each and every value is getting stored in the formate of key and value pair.
+
+Example of Key nd value 
+
+
+Key				Value		
+Employeeid			Employe name
+
+Key				Value
+Employeeid			Employe age
+
+Key				Value
+EmployeeidName			Employe salary
+
+Key				Value
+Stdent Name			Student Percentage
+
+Key				Value
+Student Id			Student Grad
+
+Key				Value
+Student Id			Student City
+  
